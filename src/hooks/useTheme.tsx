@@ -1,24 +1,23 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useThemeStore } from '../store/themeStore'
 import shallow from 'zustand/shallow'
 
 const useTheme = () => {
-  const themeLocalSource = JSON.parse(localStorage.getItem('theme') || '{}')
-
   const { theme } = useThemeStore(
     (state) => ({
       theme: state.theme,
     }),
     shallow
   )
+  const { setTheme } = useThemeStore()
 
   useEffect(() => {
-    if (!themeLocalSource.theme) {
-      localStorage.setItem('theme', JSON.stringify({ theme: 'light' }))
-    } else {
-      localStorage.setItem('theme', JSON.stringify({ theme }))
-    }
+    theme === 'light'
+      ? document.body.classList.remove('dark')
+      : document.body.classList.add('dark')
+    localStorage.setItem('theme', JSON.stringify(theme))
   }, [theme])
+
   return theme
 }
 

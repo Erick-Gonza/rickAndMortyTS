@@ -1,14 +1,24 @@
-import useFetch from './hooks/useFetch'
-import { Character } from './Interfaces'
+import { useThemeStore } from './store/themeStore'
+import useTheme from './hooks/useTheme'
 
 function App() {
-  const { data } = useFetch()
-  return data?.results.map((character: Character) => (
-    <div key={character.id}>
-      <h1>{character.name}</h1>
-      <img src={character?.image} />
-    </div>
-  ))
+  const theme = useTheme()
+  const { setTheme } = useThemeStore()
+  return (
+    <>
+      <div>
+        <h2>Hello world</h2>
+        <p>Theme: {theme}</p>
+        <button
+          onClick={() =>
+            theme === 'light' ? setTheme('dark') : setTheme('light')
+          }
+        >
+          Change Theme
+        </button>
+      </div>
+    </>
+  )
 }
 
 export default App

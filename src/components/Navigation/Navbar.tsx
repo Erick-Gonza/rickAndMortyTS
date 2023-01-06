@@ -11,7 +11,7 @@ const Navbar = () => {
         <input
           type="text"
           id="characterName"
-          placeholder="Rick Sanchez"
+          placeholder="Character Name"
           className="block font-semibold text-center w-3/4 md:w-1/3 p-1 md:px-1 md:py-2 text-xs md:text-sm text-slate-300 border border-gray-300 rounded-lg bg-slate-900 dark:text-slate-900 dark:border-gray-600 dark:bg-slate-300 dark:placeholder-gray-400"
         />
       </section>

@@ -1,5 +1,9 @@
 const CharacterDetail = () => {
-  return <div>CharacterDetail</div>
+  return (
+    <>
+      <h2>CharacterDetail</h2>
+    </>
+  )
 }
 
 export default CharacterDetail

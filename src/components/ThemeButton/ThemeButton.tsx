@@ -6,6 +6,7 @@ import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 const ThemeButton = () => {
   const theme = useTheme()
   const { setTheme } = useThemeStore()
+
   return (
     <button
       className="fixed top-4 right-2 rounded-full w-8 h-8 bg-secondary flex items-center justify-center "

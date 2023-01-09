@@ -23,16 +23,29 @@ export interface Character {
 
 export interface CharacterStore {
   results: Character[]
+  page: number
   baseUrl: string
-  setBaseUrl: (url: string, page: number) => void
+  setPage: (page: number) => void
+  setBaseUrl: () => void
   getCharacters: () => Promise<void>
+}
+
+const replaceBaseUrl = (url: string, page: number): string => {
+  let index = url.lastIndexOf('page=')
+  return url.slice(0, index).concat(`page=${page}`)
 }
 
 export const useCharacterStore = create<CharacterStore>((set, get) => ({
   results: [],
+  page: 1,
   baseUrl: 'https://rickandmortyapi.com/api/character?page=1',
-  setBaseUrl: (url: string, page: number) =>
-    set((state) => ({ baseUrl: `${url}?page${page}` })),
+
+  setPage: (page: number) => set((state) => ({ page })),
+
+  setBaseUrl: () =>
+    set((state) => ({
+      baseUrl: replaceBaseUrl(get().baseUrl, get().page),
+    })),
 
   getCharacters: async () => {
     const response = await (await fetch(get().baseUrl)).json()

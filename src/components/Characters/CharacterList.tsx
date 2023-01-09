@@ -10,17 +10,20 @@ const CharacterList = () => {
     }),
     shallow
   )
-  const { getCharacters, setBaseUrl } = useCharacterStore()
+  const { getCharacters } = useCharacterStore()
 
   useEffect(() => {
     getCharacters()
-  }, [])
+  }, [baseUrl])
 
   return (
     <>
       {results.map((character) => {
         return (
-          <section className="flex items-center justify-center rounded-xl bg-secondary relative">
+          <section
+            className="flex items-center justify-center rounded-xl bg-secondary relative"
+            key={character.id}
+          >
             <img
               src={character.image}
               alt={character.name}

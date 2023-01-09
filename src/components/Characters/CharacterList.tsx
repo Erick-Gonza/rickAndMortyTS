@@ -20,22 +20,16 @@ const CharacterList = () => {
     <>
       {results.map((character) => {
         return (
-          <section className="bg-indigo-600 px-2 py-3 rounded mb-4">
-            <h2 className="font-bold text-xl">{character.name}</h2>
+          <section className="flex items-center justify-center rounded-xl bg-secondary relative">
             <img
               src={character.image}
               alt={character.name}
-              className="w-fit rounded px-2 py-3"
+              className="rounded-xl border-secondary border-2"
             />
-            <section className="flex items-center">
-              <section className="w-1/2">
-                <p className="font-medium text-md">{character.status}</p>
-                <p className="font-medium text-md">{character.gender}</p>
-              </section>
-              <section className="w-1/2">
-                <p className="font-medium text-md">{character.location.name}</p>
-                <p className="font-medium text-md">{character.origin.name}</p>
-              </section>
+            <section className="absolute bottom-[2%] right-[3%] bg-primary p-1 rounded">
+              <h2 className="text-secondary text-sm">
+                {character.name.substring(0, 12)}
+              </h2>
             </section>
           </section>
         )

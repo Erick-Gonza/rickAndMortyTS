@@ -1,5 +1,6 @@
-import useTheme from '../../hooks/useTheme'
 import { useThemeStore } from '../../store/themeStore'
+import useTheme from '../../hooks/useTheme'
+
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 
 const ThemeButton = () => {
@@ -7,10 +8,14 @@ const ThemeButton = () => {
   const { setTheme } = useThemeStore()
   return (
     <button
-      className="fixed bottom-4 right-4 rounded-full w-10 h-10 bg-gray-200 flex items-center justify-center "
+      className="fixed top-4 right-2 rounded-full w-8 h-8 bg-secondary flex items-center justify-center "
       onClick={() => (theme === 'light' ? setTheme('dark') : setTheme('light'))}
     >
-      {theme === 'light' ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
+      {theme === 'light' ? (
+        <BsFillMoonStarsFill size={18} />
+      ) : (
+        <BsFillSunFill size={20} />
+      )}
     </button>
   )
 }

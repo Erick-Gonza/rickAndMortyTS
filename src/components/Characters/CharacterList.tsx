@@ -27,7 +27,7 @@ const CharacterList = () => {
       {results?.map((character) => {
         return (
           <section
-            className="flex items-center justify-center rounded-xl bg-secondary relative"
+            className="flex items-center justify-center rounded-xl bg-secondary relative shadow-lg m-1 hover:scale-110 hover:opacity-90 transition-shadow duration-300 ease-in-out"
             key={character.id}
           >
             <Link to={`/character/${character.id}`}>

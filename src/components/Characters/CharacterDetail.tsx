@@ -26,17 +26,38 @@ const CharacterDetail = () => {
   return (
     <>
       <Header />
-      <main className="w-full flex-1 px-3 py-4 grid grid-cols-2 gap-4">
-        <section
-          className="flex items-center justify-center rounded-xl bg-secondary relative"
-          key={singleCharacter.id}
-        >
+      <main className="w-full h-full flex-1 mt-4 mb-4 px-3 py-4">
+        <section className="rounded overflow-hidden shadow-lg border-2 border-secondary">
           <img
+            className="w-full"
             src={singleCharacter.image}
             alt={singleCharacter.name}
-            className="rounded-xl border-secondary border-2"
           />
-          <h2 className="text-secondary text-sm">{singleCharacter.name}</h2>
+          <section className="px-2 py-4">
+            <h2 className="font-bold text-xl mb-2 text-secondary">
+              {singleCharacter.name}
+            </h2>
+            <p className="text-base text-secondary">
+              {singleCharacter.location?.name}
+            </p>
+          </section>
+          <section className="px-3 py-4">
+            <span
+              className={`inline-block rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2 ${
+                singleCharacter.status === 'Alive'
+                  ? 'bg-green-500'
+                  : 'bg-red-500'
+              }`}
+            >
+              {singleCharacter.status}
+            </span>
+            <span className="inline-block bg-secondary rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2">
+              {singleCharacter.species}
+            </span>
+            <span className="inline-block bg-secondary rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2">
+              {singleCharacter.origin?.name}
+            </span>
+          </section>
         </section>
       </main>
       <ThemeButton />

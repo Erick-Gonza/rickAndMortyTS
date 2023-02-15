@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="w-full flex-1 px-3 py-4 grid grid-cols-2 gap-4">
+      <main className="w-full flex-1 px-3 py-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
         <CharacterList />
       </main>
       <ThemeButton />

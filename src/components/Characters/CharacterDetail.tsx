@@ -26,37 +26,40 @@ const CharacterDetail = () => {
   return (
     <>
       <Header />
-      <main className="w-full h-full flex-1 mt-4 mb-4 px-3 py-4">
-        <section className="rounded overflow-hidden shadow-lg border-2 border-secondary">
+      <main className="flex items-center justify-center w-full h-full flex-1 px-3 py-4">
+        <section className="flex flex-col md:flex-row md:w-auto md:h-3/4 rounded overflow-hidden shadow-lg border-2 border-secondary px-4 py-3">
           <img
-            className="w-full"
+            className="w-fit rounded-md mb-4"
             src={singleCharacter.image}
             alt={singleCharacter.name}
           />
-          <section className="px-2 py-4">
-            <h2 className="font-bold text-xl mb-2 text-secondary">
-              {singleCharacter.name}
-            </h2>
-            <p className="text-base text-secondary">
-              {singleCharacter.location?.name}
-            </p>
-          </section>
-          <section className="px-3 py-4">
-            <span
-              className={`inline-block rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2 ${
-                singleCharacter.status === 'Alive'
-                  ? 'bg-green-500'
-                  : 'bg-red-500'
-              }`}
-            >
-              {singleCharacter.status}
-            </span>
-            <span className="inline-block bg-secondary rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2">
-              {singleCharacter.species}
-            </span>
-            <span className="inline-block bg-secondary rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2">
-              {singleCharacter.origin?.name}
-            </span>
+
+          <section className="px-4 py-3">
+            <section className="flex flex-col justify-center">
+              <h2 className="font-bold text-xl mb-2 text-secondary">
+                {singleCharacter.name}
+              </h2>
+              <p className="text-base text-secondary">
+                {singleCharacter.location?.name}
+              </p>
+            </section>
+            <section className="flex flex-col justify-center ">
+              <span
+                className={`inline-block rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2 ${
+                  singleCharacter.status === 'Alive'
+                    ? 'bg-green-500'
+                    : 'bg-red-500'
+                }`}
+              >
+                {singleCharacter.status}
+              </span>
+              <span className="inline-block bg-secondary rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2">
+                {singleCharacter.species}
+              </span>
+              <span className="inline-block bg-secondary rounded-full px-2 py-1 text-sm font-semibold text-primary mr-2 mb-2">
+                {singleCharacter.origin?.name}
+              </span>
+            </section>
           </section>
         </section>
       </main>

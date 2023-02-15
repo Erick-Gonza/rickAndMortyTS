@@ -30,11 +30,11 @@ const CharacterList = () => {
             className="flex items-center justify-center rounded-xl bg-secondary relative shadow-lg m-1 hover:scale-110 hover:opacity-90 transition-shadow duration-300 ease-in-out"
             key={character.id}
           >
-            <Link to={`/character/${character.id}`}>
+            <Link to={`/character/${character.id}`} className="w-full h-full">
               <img
                 src={character.image}
                 alt={character.name}
-                className="rounded-xl border-secondary border-2"
+                className="w-full h-full object-cover rounded-xl border-secondary border-2"
               />
               <section className="absolute bottom-[2%] right-[3%] bg-primary p-1 rounded">
                 <h2 className="text-secondary text-sm">

@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className="flex mt-4 items-center justify-around w-full container">
       <section>
         <button
-          className="rounded bg-secondary text-primary px-4 py-2 text-xs md:text-sm font-asap font-bold hover:opacity-80 active:scale-110 transition-shadow"
+          className="rounded bg-secondary text-primary px-4 py-2 text-xs md:text-sm md:w-40 font-asap font-bold hover:opacity-80 active:scale-110 transition-shadow"
           onClick={() => handlePage(-1)}
         >
           Prev
@@ -43,7 +43,7 @@ const Navbar = () => {
 
       <section>
         <button
-          className="rounded bg-secondary text-primary px-4 py-2 text-xs md:text-sm font-asap font-bold hover:opacity-80 active:scale-110 transition-shadow"
+          className="rounded bg-secondary text-primary px-4 py-2 text-xs md:text-sm md:w-40 font-asap font-bold hover:opacity-80 active:scale-110 transition-shadow"
           onClick={() => handlePage(1)}
         >
           Next
